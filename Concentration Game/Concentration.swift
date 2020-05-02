@@ -5,7 +5,6 @@ class Concentration
     var cards = Array<Card>()
     var indexOfOnlyOneFaceUp: Int?
     
-    
     func chooseCard(at index: Int) {
         if !cards[index].isMatched {
             if let matchIndex = indexOfOnlyOneFaceUp, matchIndex != index {
