@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CA05C6D7245B48450026CF8B /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA05C6D6245B48450026CF8B /* Concentration.swift */; };
+		CA44C1002494F5E300F54D93 /* StartGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA44C0FF2494F5E300F54D93 /* StartGameController.swift */; };
+		CA44C1042495296200F54D93 /* HighScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA44C1032495296200F54D93 /* HighScore.swift */; };
 		CAC2AB582458B65900FA40D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2AB572458B65900FA40D0 /* AppDelegate.swift */; };
 		CAC2AB5A2458B65900FA40D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2AB592458B65900FA40D0 /* SceneDelegate.swift */; };
 		CAC2AB5C2458B65900FA40D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2AB5B2458B65900FA40D0 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		CA05C6D6245B48450026CF8B /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
+		CA44C0FF2494F5E300F54D93 /* StartGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameController.swift; sourceTree = "<group>"; };
+		CA44C1032495296200F54D93 /* HighScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScore.swift; sourceTree = "<group>"; };
 		CAC2AB542458B65900FA40D0 /* Concentration Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Concentration Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC2AB572458B65900FA40D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAC2AB592458B65900FA40D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA44C10124951E8200F54D93 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CA44C0FF2494F5E300F54D93 /* StartGameController.swift */,
+				CAC2AB5B2458B65900FA40D0 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CA44C10224951E9700F54D93 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CAC2AB6B2458B84900FA40D0 /* Card.swift */,
+				CA05C6D6245B48450026CF8B /* Concentration.swift */,
+				CA44C1032495296200F54D93 /* HighScore.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		CAC2AB4B2458B65900FA40D0 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +83,14 @@
 		CAC2AB562458B65900FA40D0 /* Concentration Game */ = {
 			isa = PBXGroup;
 			children = (
+				CA44C10224951E9700F54D93 /* Utils */,
+				CA44C10124951E8200F54D93 /* Controller */,
 				CAC2AB572458B65900FA40D0 /* AppDelegate.swift */,
 				CAC2AB592458B65900FA40D0 /* SceneDelegate.swift */,
-				CAC2AB5B2458B65900FA40D0 /* ViewController.swift */,
 				CAC2AB5D2458B65900FA40D0 /* Main.storyboard */,
 				CAC2AB602458B65E00FA40D0 /* Assets.xcassets */,
 				CAC2AB622458B65E00FA40D0 /* LaunchScreen.storyboard */,
 				CAC2AB652458B65E00FA40D0 /* Info.plist */,
-				CAC2AB6B2458B84900FA40D0 /* Card.swift */,
-				CA05C6D6245B48450026CF8B /* Concentration.swift */,
 			);
 			path = "Concentration Game";
 			sourceTree = "<group>";
@@ -145,9 +167,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAC2AB5C2458B65900FA40D0 /* ViewController.swift in Sources */,
+				CA44C1042495296200F54D93 /* HighScore.swift in Sources */,
 				CA05C6D7245B48450026CF8B /* Concentration.swift in Sources */,
 				CAC2AB582458B65900FA40D0 /* AppDelegate.swift in Sources */,
 				CAC2AB5A2458B65900FA40D0 /* SceneDelegate.swift in Sources */,
+				CA44C1002494F5E300F54D93 /* StartGameController.swift in Sources */,
 				CAC2AB6C2458B84900FA40D0 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

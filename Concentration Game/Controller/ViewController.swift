@@ -2,12 +2,28 @@ import UIKit
 
 class ViewController: UIViewController
 {
-    var emojiChoices = ["🎃", "👻", "🍎", "🦇", "🍭", "😱", "😈", "👹", "🙀"] //ctrl + cmd + space for emoji
+    var emojiChoices = ["🎃", "👻", "🍎", "🦇", "🍭", "😱", "😈", "👹", "🙀","💩"] //ctrl + cmd + space for emoji
     var emoji = Dictionary<Int, String>()
+    var timer:Timer?
+    var milestone:Int = 0
     
     @IBOutlet weak var flipCountLabel: UILabel!
     @IBOutlet var cardButtons: [UIButton]!
-   
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerElapsedTime), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
+    }
+    
+    @objc func timerElapsedTime(){
+        milestone += 1
+        let seconds = String(format: "%02d", (milestone%60))
+        let minutes = String(format: "%02d", milestone/60)
+        timerLabel.text = "Timer: \(minutes):\(seconds)"
+    }
+    
     lazy var game = Concentration(numberOfPairsOfCards: ((cardButtons.count + 1) / 2))
        
        var flipCount = 0 {
@@ -17,10 +33,13 @@ class ViewController: UIViewController
        }
     
     @IBAction func touchCard(_ sender: UIButton) {
-        flipCount += 1;
         let cardNumber = cardButtons.firstIndex(of: sender)!
-        game.chooseCard(at: cardNumber)
-        updateViewFromModel()
+        if(!game.cards[cardNumber].isFaceUp  && !game.cards[cardNumber].isMatched){
+            flipCount += 1;
+            game.chooseCard(at: cardNumber)
+            updateViewFromModel()
+            checkIfGameEnd()
+        }
     }
     
     func updateViewFromModel() {
@@ -44,5 +63,12 @@ class ViewController: UIViewController
         }
         
         return emoji[card.uid] ?? "?"
+    }
+    
+    func checkIfGameEnd(){
+        if(game.gameEnded()){
+           print("end")
+            self.timer?.invalidate()
+        }
     }
 }
