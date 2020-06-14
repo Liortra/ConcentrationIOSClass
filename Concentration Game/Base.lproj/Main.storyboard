@@ -322,6 +322,7 @@
                         <outletCollection property="cardButtons" destination="dBC-DS-joZ" collectionClass="NSMutableArray" id="B5f-EV-WPc"/>
                         <outletCollection property="cardButtons" destination="abp-Ms-v9Y" collectionClass="NSMutableArray" id="v2k-v6-Jka"/>
                         <outletCollection property="cardButtons" destination="cbm-Nd-pgK" collectionClass="NSMutableArray" id="M7m-DZ-WRP"/>
+                        <segue destination="0f8-ja-lim" kind="show" identifier="endGame" id="hP8-yb-nfV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -352,13 +353,48 @@
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="364"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="LiU-B2-kQF">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="highScoreCell" id="LiU-B2-kQF" customClass="HighScoreTable" customModule="Concentration_Game" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="394" height="43.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LiU-B2-kQF" id="iUi-bc-dC8">
                                                     <rect key="frame" x="0.0" y="0.0" width="394" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="LGG-Cn-TlR" customClass="HighScore">
+                                                            <rect key="frame" x="20" y="0.0" width="374" height="20.333333333333332"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNL-2F-4Ah">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="27" height="20.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ao-Yu-Axj">
+                                                                    <rect key="frame" x="163.66666666666666" y="0.0" width="38" height="20.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DE5-r0-i8X">
+                                                                    <rect key="frame" x="338" y="0.0" width="36" height="20.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="LGG-Cn-TlR" firstAttribute="leading" secondItem="iUi-bc-dC8" secondAttribute="leadingMargin" id="0Qx-5y-PTo"/>
+                                                        <constraint firstItem="LGG-Cn-TlR" firstAttribute="top" secondItem="iUi-bc-dC8" secondAttribute="top" id="6Vk-uL-w23"/>
+                                                        <constraint firstAttribute="trailing" secondItem="LGG-Cn-TlR" secondAttribute="trailing" id="7tt-uE-LD4"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="highScore_LBL_Date" destination="DE5-r0-i8X" id="elJ-j2-glw"/>
+                                                    <outlet property="highScore_LBL_Flip" destination="iNL-2F-4Ah" id="tVW-tA-Kv3"/>
+                                                    <outlet property="highScore_LBL_Time" destination="7ao-Yu-Axj" id="yTu-pu-y5I"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -392,4 +428,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="828.34821428571422"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hP8-yb-nfV"/>
+    </inferredMetricsTieBreakers>
 </document>

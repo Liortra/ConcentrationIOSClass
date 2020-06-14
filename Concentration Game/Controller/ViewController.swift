@@ -8,7 +8,8 @@ class ViewController: UIViewController
     var timer:Timer?
     var milestone:Int = 0
     var locationManager: CLLocationManager!
-    var player = Player()
+    var player: Player = Player()
+    let playerId = "endGame"
     
     @IBOutlet weak var flipCountLabel: UILabel!
     @IBOutlet var cardButtons: [UIButton]!
@@ -18,7 +19,6 @@ class ViewController: UIViewController
         super.viewDidLoad()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerElapsedTime), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
-        
         initLocationManager()
     }
     
@@ -38,7 +38,8 @@ class ViewController: UIViewController
         locationManager.requestLocation()
     }
     
-    // MARK: - Create the board
+    // MARK: - Game logic
+    //create the board
     lazy var game = Concentration(numberOfPairsOfCards: ((cardButtons.count + 1) / 2))
        
        var flipCount = 0 {
@@ -47,6 +48,7 @@ class ViewController: UIViewController
            }
        }
     
+    // the card function
     @IBAction func touchCard(_ sender: UIButton) {
         let cardNumber = cardButtons.firstIndex(of: sender)!
         if(!game.cards[cardNumber].isFaceUp  && !game.cards[cardNumber].isMatched){
@@ -57,6 +59,7 @@ class ViewController: UIViewController
         }
     }
     
+    //the board function
     func updateViewFromModel() {
         for index in cardButtons.indices {
             let button = cardButtons[index]
@@ -76,7 +79,6 @@ class ViewController: UIViewController
             let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
             emoji[card.uid] = emojiChoices.remove(at: randomIndex)
         }
-        
         return emoji[card.uid] ?? "?"
     }
     
@@ -86,11 +88,21 @@ class ViewController: UIViewController
             print("end")
             self.timer?.invalidate()
             updatePlayer()
+            performSegue(withIdentifier: playerId, sender: self)
         }
     }
     
     func updatePlayer(){
-        
+        self.player.flip = flipCount
+        self.player.time = milestone
+        self.player.date = self.player.createDate()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == playerId){
+            let vc = segue.destination as! HighScoreController
+            vc.checkPlayer = self.player
+        }
     }
 }
 

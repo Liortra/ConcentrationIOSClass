@@ -11,6 +11,7 @@
 		CA44C1002494F5E300F54D93 /* StartGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA44C0FF2494F5E300F54D93 /* StartGameController.swift */; };
 		CA8A920924961573009A8B61 /* HighScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A920824961573009A8B61 /* HighScoreController.swift */; };
 		CA8A920B249621E8009A8B61 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A920A249621E8009A8B61 /* Player.swift */; };
+		CA8A920E24963184009A8B61 /* HighScoreTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A920D24963184009A8B61 /* HighScoreTable.swift */; };
 		CAC2AB582458B65900FA40D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2AB572458B65900FA40D0 /* AppDelegate.swift */; };
 		CAC2AB5A2458B65900FA40D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2AB592458B65900FA40D0 /* SceneDelegate.swift */; };
 		CAC2AB5C2458B65900FA40D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2AB5B2458B65900FA40D0 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		CA44C0FF2494F5E300F54D93 /* StartGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameController.swift; sourceTree = "<group>"; };
 		CA8A920824961573009A8B61 /* HighScoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreController.swift; sourceTree = "<group>"; };
 		CA8A920A249621E8009A8B61 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		CA8A920D24963184009A8B61 /* HighScoreTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreTable.swift; sourceTree = "<group>"; };
 		CAC2AB542458B65900FA40D0 /* Concentration Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Concentration Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC2AB572458B65900FA40D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAC2AB592458B65900FA40D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				CAC2AB6B2458B84900FA40D0 /* Card.swift */,
 				CA05C6D6245B48450026CF8B /* Concentration.swift */,
 				CA8A920A249621E8009A8B61 /* Player.swift */,
+				CA8A920D24963184009A8B61 /* HighScoreTable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAC2AB5C2458B65900FA40D0 /* ViewController.swift in Sources */,
+				CA8A920E24963184009A8B61 /* HighScoreTable.swift in Sources */,
 				CA05C6D7245B48450026CF8B /* Concentration.swift in Sources */,
 				CAC2AB582458B65900FA40D0 /* AppDelegate.swift in Sources */,
 				CA8A920924961573009A8B61 /* HighScoreController.swift in Sources */,

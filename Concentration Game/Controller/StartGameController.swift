@@ -7,8 +7,6 @@ class StartGameController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func ClickStart(_ sender: Any) {
@@ -24,11 +22,9 @@ class StartGameController: UIViewController {
         if(segue.identifier == "play"){
             _ = segue.destination as! ViewController
         }
-        /*
         if(segue.identifier == "topTen"){
-            _= segue.description as!
+            _ = segue.destination as! HighScoreController
         }
- */
     }
 
 }

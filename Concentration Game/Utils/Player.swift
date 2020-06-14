@@ -27,6 +27,4 @@ class Player:Codable
         format.locale = .current
         return format.string(from: now)
     }
-    
-    
 }
