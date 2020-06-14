@@ -5,6 +5,7 @@ class HighScoreController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var table_highScore: UITableView!
     @IBOutlet weak var map_highScore: MKMapView!
+    @IBOutlet weak var BTN_backButton: UIButton!
     
     var checkPlayer: Player?
     var highScoreList:[Player] = [Player]()
@@ -15,6 +16,7 @@ class HighScoreController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         initHighScoreTable()
         showHighScoreTable()
+        showPlayersLocations()
     }
     
     //MARK:- Didload functions
@@ -29,6 +31,17 @@ class HighScoreController: UIViewController, UITableViewDelegate, UITableViewDat
         self.highScoreList = readData()
         if(checkPlayer != nil){
          appendAndSortHighScoreList(checkPlayer: checkPlayer!)
+        }
+    }
+    
+    //MARK:- Back button to main screen
+    @IBAction func ClickBack(_ sender: Any) {
+        self.performSegue(withIdentifier: "main", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "main"){
+            _ = segue.destination as! StartGameController
         }
     }
     
@@ -51,6 +64,7 @@ class HighScoreController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // loctaion functions
     func showPlayersLocations(){
+        sortHighScoreList()
         for player in self.highScoreList{
             markInMap(player: player)
         }
@@ -104,7 +118,6 @@ class HighScoreController: UIViewController, UITableViewDelegate, UITableViewDat
         let minutes = String(format: "%02d", highScoreList[indexPath.row].time/60)
         cell?.highScore_LBL_Time.text = "\(minutes):\(seconds)"
         cell?.highScore_LBL_Date.text = String(highScoreList[indexPath.row].date)
-        showPlayersLocations()
         return cell!
     }
 

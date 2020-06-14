@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="x7o-VO-v8s" customClass="StartGameController" customModule="Concentration_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9JZ-PK-vrV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="JtD-3F-qbw">
-                                <rect key="frame" x="150.66666666666666" y="268.66666666666669" width="112.99999999999997" height="359.00000000000006"/>
+                                <rect key="frame" x="150.66666666666666" y="241.66666666666663" width="112.99999999999997" height="359"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxe-eF-CQ0">
                                         <rect key="frame" x="0.0" y="0.0" width="113" height="53"/>
@@ -30,7 +30,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQO-Vh-53C">
-                                        <rect key="frame" x="0.0" y="153" width="113" height="53"/>
+                                        <rect key="frame" x="0.0" y="153.00000000000003" width="113" height="53"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <state key="normal" title="Top Ten"/>
                                         <connections>
@@ -39,7 +39,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rW2-hA-TpZ">
-                                        <rect key="frame" x="0.0" y="305.99999999999994" width="113" height="53"/>
+                                        <rect key="frame" x="0.0" y="306" width="113" height="53"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <state key="normal" title="Exit"/>
                                         <connections>
@@ -50,7 +50,7 @@
                                 <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the Emoji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAD-Hp-CmU">
-                                <rect key="frame" x="43.666666666666657" y="44.000000000000007" width="327" height="65.666666666666686"/>
+                                <rect key="frame" x="43.666666666666657" y="0.0" width="327" height="65.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -65,6 +65,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cgj-bg-arj"/>
                     </view>
+                    <navigationItem key="navigationItem" id="SLI-fg-IZN"/>
                     <connections>
                         <outlet property="BTN_exitButton" destination="rW2-hA-TpZ" id="usc-L2-syY"/>
                         <outlet property="BTN_playButton" destination="oxe-eF-CQ0" id="m4z-9q-93Z"/>
@@ -348,19 +349,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Ten" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcB-E0-QIy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="oKA-Mv-oRn"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eCa-vt-aCI">
-                                <rect key="frame" x="10" y="60" width="394" height="738"/>
+                                <rect key="frame" x="10" y="58" width="394" height="740"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MxW-Zs-0nd">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="364"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="365"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="highScoreCell" id="LiU-B2-kQF" customClass="HighScoreTable" customModule="Concentration_Game" customModuleProvider="target">
@@ -409,19 +407,36 @@
                                         </prototypes>
                                     </tableView>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iZm-RS-MUd">
-                                        <rect key="frame" x="0.0" y="374" width="394" height="364"/>
+                                        <rect key="frame" x="0.0" y="375" width="394" height="365"/>
                                     </mapView>
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLf-q8-wXQ">
+                                <rect key="frame" x="10" y="10" width="65" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="tfd-OZ-Jkn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ClickBack:" destination="0f8-ja-lim" eventType="touchUpInside" id="Lmd-Iu-JrR"/>
+                                    <segue destination="x7o-VO-v8s" kind="show" identifier="main" id="W4Z-Na-A3E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="Color"/>
                         <constraints>
+                            <constraint firstItem="iLf-q8-wXQ" firstAttribute="leading" secondItem="fLU-bD-cD1" secondAttribute="leading" constant="10" id="6aJ-V6-87z"/>
+                            <constraint firstItem="fLU-bD-cD1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iLf-q8-wXQ" secondAttribute="trailing" symbolic="YES" id="Ag6-yl-Yd9"/>
                             <constraint firstItem="JcB-E0-QIy" firstAttribute="leading" secondItem="fLU-bD-cD1" secondAttribute="leading" id="CAa-iu-GfM"/>
                             <constraint firstItem="fLU-bD-cD1" firstAttribute="bottom" secondItem="eCa-vt-aCI" secondAttribute="bottom" constant="10" id="LuV-s8-4Al"/>
                             <constraint firstItem="fLU-bD-cD1" firstAttribute="trailing" secondItem="eCa-vt-aCI" secondAttribute="trailing" constant="10" id="aMC-s3-aLC"/>
                             <constraint firstItem="fLU-bD-cD1" firstAttribute="trailing" secondItem="JcB-E0-QIy" secondAttribute="trailing" id="rGo-K7-uWm"/>
                             <constraint firstItem="eCa-vt-aCI" firstAttribute="top" secondItem="JcB-E0-QIy" secondAttribute="bottom" constant="10" id="rHz-kk-xOY"/>
+                            <constraint firstItem="iLf-q8-wXQ" firstAttribute="top" secondItem="fLU-bD-cD1" secondAttribute="top" constant="10" id="rmI-hb-btP"/>
                             <constraint firstItem="JcB-E0-QIy" firstAttribute="top" secondItem="fLU-bD-cD1" secondAttribute="top" id="wPL-BK-xFg"/>
                             <constraint firstItem="eCa-vt-aCI" firstAttribute="leading" secondItem="fLU-bD-cD1" secondAttribute="leading" constant="10" id="xzr-by-wMe"/>
                         </constraints>
@@ -429,6 +444,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="bbQ-h5-0Cu"/>
                     <connections>
+                        <outlet property="BTN_backButton" destination="iLf-q8-wXQ" id="Z5D-PC-pIr"/>
                         <outlet property="map_highScore" destination="iZm-RS-MUd" id="clZ-xx-apy"/>
                         <outlet property="table_highScore" destination="MxW-Zs-0nd" id="fTr-5i-3Y1"/>
                     </connections>
