@@ -3,6 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="JtD-3F-qbw">
-                                <rect key="frame" x="150.66666666666666" y="345" width="112.99999999999997" height="206"/>
+                                <rect key="frame" x="150.66666666666666" y="268.66666666666669" width="112.99999999999997" height="359.00000000000006"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxe-eF-CQ0">
                                         <rect key="frame" x="0.0" y="0.0" width="113" height="53"/>
@@ -37,17 +38,25 @@
                                             <segue destination="0f8-ja-lim" kind="show" identifier="topTen" id="Ia0-3J-cdU"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rW2-hA-TpZ">
+                                        <rect key="frame" x="0.0" y="305.99999999999994" width="113" height="53"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <state key="normal" title="Exit"/>
+                                        <connections>
+                                            <action selector="ClickExit:" destination="x7o-VO-v8s" eventType="touchUpInside" id="CUU-jA-POy"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the Emoji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAD-Hp-CmU">
                                 <rect key="frame" x="43.666666666666657" y="44.000000000000007" width="327" height="65.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="55"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="Color"/>
                         <constraints>
                             <constraint firstItem="fAD-Hp-CmU" firstAttribute="top" secondItem="cgj-bg-arj" secondAttribute="top" id="Em0-bD-vXc"/>
                             <constraint firstItem="fAD-Hp-CmU" firstAttribute="centerX" secondItem="9JZ-PK-vrV" secondAttribute="centerX" id="lW9-b3-rPL"/>
@@ -57,6 +66,7 @@
                         <viewLayoutGuide key="safeArea" id="cgj-bg-arj"/>
                     </view>
                     <connections>
+                        <outlet property="BTN_exitButton" destination="rW2-hA-TpZ" id="usc-L2-syY"/>
                         <outlet property="BTN_playButton" destination="oxe-eF-CQ0" id="m4z-9q-93Z"/>
                         <outlet property="BTN_topTenButton" destination="BQO-Vh-53C" id="cyZ-Kc-b04"/>
                     </connections>
@@ -74,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ppD-YU-LUA">
-                                <rect key="frame" x="16" y="0.0" width="382" height="392"/>
+                                <rect key="frame" x="16" y="10" width="382" height="392"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LG2-VW-kgs">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="72"/>
@@ -281,9 +291,9 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="Color"/>
                         <constraints>
-                            <constraint firstItem="ppD-YU-LUA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7ym-Km-js6"/>
+                            <constraint firstItem="ppD-YU-LUA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="9Ea-59-b8i"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KDe-GU-sXq" secondAttribute="trailing" constant="10" id="Iz5-hG-qh4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KDe-GU-sXq" secondAttribute="bottom" constant="10" id="JT5-aB-pv8">
                                 <variation key="heightClass=compact-widthClass=regular" constant="20"/>
@@ -343,7 +353,7 @@
                                     <constraint firstAttribute="height" constant="50" id="oKA-Mv-oRn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eCa-vt-aCI">
@@ -405,7 +415,7 @@
                                 <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="Color"/>
                         <constraints>
                             <constraint firstItem="JcB-E0-QIy" firstAttribute="leading" secondItem="fLU-bD-cD1" secondAttribute="leading" id="CAa-iu-GfM"/>
                             <constraint firstItem="fLU-bD-cD1" firstAttribute="bottom" secondItem="eCa-vt-aCI" secondAttribute="bottom" constant="10" id="LuV-s8-4Al"/>
@@ -428,7 +438,12 @@
             <point key="canvasLocation" x="137.68115942028987" y="828.34821428571422"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Color">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hP8-yb-nfV"/>
+        <segue reference="Ia0-3J-cdU"/>
     </inferredMetricsTieBreakers>
 </document>

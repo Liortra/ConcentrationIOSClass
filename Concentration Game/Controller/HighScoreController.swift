@@ -60,7 +60,9 @@ class HighScoreController: UIViewController, UITableViewDelegate, UITableViewDat
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D.init(latitude: player.playerLat, longitude: player.playerLong)
         map_highScore.addAnnotation(annotation)
-        annotation.title = String(player.time)
+        let seconds = String(format: "%02d", (player.time%60))
+        let minutes = String(format: "%02d", player.time/60)
+        annotation.title = "\(minutes):\(seconds)"
     }
     
     //read and write functions
@@ -98,7 +100,9 @@ class HighScoreController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.table_highScore.dequeueReusableCell(withIdentifier: cellId) as? HighScoreTable
         cell?.highScore_LBL_Flip.text = String(highScoreList[indexPath.row].flip)
-        cell?.highScore_LBL_Time.text = String(highScoreList[indexPath.row].time)
+        let seconds = String(format: "%02d", (highScoreList[indexPath.row].time%60))
+        let minutes = String(format: "%02d", highScoreList[indexPath.row].time/60)
+        cell?.highScore_LBL_Time.text = "\(minutes):\(seconds)"
         cell?.highScore_LBL_Date.text = String(highScoreList[indexPath.row].date)
         showPlayersLocations()
         return cell!
