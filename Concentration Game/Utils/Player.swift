@@ -1,12 +1,16 @@
 import Foundation
 
-class HighScore:Codable
+class Player:Codable
 {
     var time:Int = 0
     var flip:Int = 0
     var playerLong: Double = 0.0
     var playerLat: Double = 0.0
     var date:String = ""
+    
+    init(){
+        
+    }
     
     init(time:Int,flip:Int) {
         self.time = time

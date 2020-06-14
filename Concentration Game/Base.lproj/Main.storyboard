@@ -331,7 +331,7 @@
         <!--High Score Controller-->
         <scene sceneID="XeE-zN-wO1">
             <objects>
-                <viewController title="High Score Controller" id="0f8-ja-lim" sceneMemberID="viewController">
+                <viewController title="High Score Controller" id="0f8-ja-lim" customClass="HighScoreController" customModule="Concentration_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N3r-tb-E2u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -382,6 +382,10 @@
                         <viewLayoutGuide key="safeArea" id="fLU-bD-cD1"/>
                     </view>
                     <navigationItem key="navigationItem" id="bbQ-h5-0Cu"/>
+                    <connections>
+                        <outlet property="map_highScore" destination="iZm-RS-MUd" id="clZ-xx-apy"/>
+                        <outlet property="table_highScore" destination="MxW-Zs-0nd" id="fTr-5i-3Y1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhE-gh-Ysq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

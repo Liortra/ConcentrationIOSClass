@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController
 {
@@ -6,6 +7,8 @@ class ViewController: UIViewController
     var emoji = Dictionary<Int, String>()
     var timer:Timer?
     var milestone:Int = 0
+    var locationManager: CLLocationManager!
+    var player = Player()
     
     @IBOutlet weak var flipCountLabel: UILabel!
     @IBOutlet var cardButtons: [UIButton]!
@@ -15,15 +18,27 @@ class ViewController: UIViewController
         super.viewDidLoad()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerElapsedTime), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
+        
+        initLocationManager()
     }
     
+    //MARK:- Didload functions
+    // timer
     @objc func timerElapsedTime(){
         milestone += 1
         let seconds = String(format: "%02d", (milestone%60))
         let minutes = String(format: "%02d", milestone/60)
         timerLabel.text = "Timer: \(minutes):\(seconds)"
     }
+    // locations
+    func initLocationManager(){
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+    }
     
+    // MARK: - Create the board
     lazy var game = Concentration(numberOfPairsOfCards: ((cardButtons.count + 1) / 2))
        
        var flipCount = 0 {
@@ -65,10 +80,33 @@ class ViewController: UIViewController
         return emoji[card.uid] ?? "?"
     }
     
+    // MARK:- End of the game
     func checkIfGameEnd(){
         if(game.gameEnded()){
-           print("end")
+            print("end")
             self.timer?.invalidate()
+            updatePlayer()
         }
+    }
+    
+    func updatePlayer(){
+        
+    }
+}
+
+//MARK:- Get the location
+extension ViewController : CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            locationManager.stopUpdatingLocation()
+            let lat = location.coordinate.latitude
+            let lon = location.coordinate.longitude
+            self.player.playerLat = lat
+            self.player.playerLong = lon
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error in location: \(error)")
     }
 }
